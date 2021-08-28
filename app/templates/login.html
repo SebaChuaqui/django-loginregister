@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block contenido %}
+
+<div class=" bg-dark container mt-5 justify-content-center p-5">
+    <div class="row justify-content-center">
+        <div class="col-5">
+            <h1 class="text-white">INGRESAR</h1>
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label for="email" class="form-label text-white">Correo</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-5">
+                    <label for="password" class="form-label text-white">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+
+
+                <button type="submit" class="btn btn-success mb-3">Ingresar</button>
+            </form>
+            <a href="/registro">No posees una cuenta?. Ir al registro.</a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
